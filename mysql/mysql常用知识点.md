@@ -336,7 +336,7 @@ innodb是支持事务的存储引擎；锁的级别是：行锁。支持外键�
 
 四种事务隔离解决的问题：
 
-![1552285320244](assets/1552285320244.png)
+![1552285320244](./assets/1552285320244.png)
 
 ## MVCC 可参照 文章[ 参考](https://mp.weixin.qq.com/s?src=11&timestamp=1552286772&ver=1477&signature=5EuWx9yzvSi18dR8-eyWnlqTtYqYPQ84S1Ad3n9AiHQixYPy2Ior2-bbqBdCsZNFnb4tWwfUs2uV63MRqD6EFmQODk4*e4xVoWPGZfhRTjahiMbrcJY0g52mIe9M0ldK&new=1)
 
