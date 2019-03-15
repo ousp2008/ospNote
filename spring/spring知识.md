@@ -15,4 +15,4 @@ web容器（比如Tomcat）会读取配置在web.xml中的监听器，从而启�
 
 时序图：
 
-![1552295472547](assets/1552295472547.png)
+![1552295472547](https://github.com/ousp2008/ospNote/blob/master/spring/asserts/1552295472547.png
