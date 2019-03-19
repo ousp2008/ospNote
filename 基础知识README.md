@@ -41,3 +41,7 @@ public InitialOrderTest() {
 - 父类（构造函数）
 - 子类（实例变量、普通语句块）
 - 子类（构造函数）
+
+
+# hashmap常见面试题
+[hashmap常见面试题](http://www.importnew.com/31278.html)
