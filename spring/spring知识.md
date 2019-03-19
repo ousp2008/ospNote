@@ -24,3 +24,7 @@ web容器（比如Tomcat）会读取配置在web.xml中的监听器，从而启�
 
 时序图：
 ![1552285320244](https://github.com/ousp2008/ospNote/blob/master/spring/asserts/1552295472547.png)
+
+# spring 常见面试题
+[spring常见面试题](http://www.importnew.com/15851.html)
+
