@@ -1,0 +1,19 @@
+- SpringMVC 工作原理
+- 说一下自己对 IOC 、AOP 的理解
+- Spring 中用到了那些设计模式，讲一下自己对于这些设计模式的理解
+- Spring Bean 的作用域和生命周期了解吗
+- Spring 事务中的隔离级别
+- Spring 事务中的事务传播行为
+- 手写一个 LRU 算法
+- 知道那些排序算法，简单介绍一下快排的原理，能不能手写一下快排
+- String 为什么是不可变的？String为啥要设计为不可变的？
+- Arraylist 与 LinkedList 异同
+- HashMap的底层实现
+- HashMap 的长度为什么是2的幂次方
+- ConcurrentHashMap 和 Hashtable 的区别
+- ConcurrentHashMap线程安全的具体实现方式/底层具体实现
+- 如果你的简历写了redis 、dubbo、zookeeper、docker的话，面试官还会问一下这些东西。比如redis可能会问你：为什么要用 redis、为什么要用 redis 而不用 map/guava 做缓存、redis 常见数据结构以及使用场景分析、 redis 设置过期时间、redis 内存淘汰机制、 redis 持久化机制、 缓存雪崩和缓存穿透问题、如何解决 Redis 的并发竞争 Key 问题、如何保证缓存与数据库双写时的数据一致性。
+- 一些简单的 Linux 命令。
+- 为什么要用 消息队列
+- 关于 Java多线程，在面试的时候，问的比较多的就是①悲观锁和乐观锁②synchronized 和 ReenTrantLock 区别以及 volatile 和 synchronized 的区别，③可重入锁与非可重入锁的区别、④多线程是解决什么问题的、⑤线程池解决什么问题，为什么要用线程池 ⑥Synchronized 关键字使用、底层原理、JDK1.6 之后的底层优化以及 ReenTrantLock 对比；⑦线程池使用时的注意事项、⑧AQS 原理以及 AQS 同步组件：Semaphore、CountDownLatCh、 CyclicBarrier、ReadWriteLock、⑨ReentranLock源码，设计原理，整体过程 等等问题。
+- 关于 Java 虚拟机问的比较多的是：①Java内存区域、②虚拟机垃圾算法、③虚拟机垃圾收集器、④JVM内存管理、⑤JVM调优这些问题。
