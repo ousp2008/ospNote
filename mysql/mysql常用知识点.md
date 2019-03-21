@@ -56,9 +56,11 @@ ID即可，而不能有其他的客户信息，因为其他的用户信息是直
 
 ### 基本原则
 
-​	避免全表扫描
+```
+避免全表扫描
 
-​	建立索引
+建立索引
+```
 
 ## 创建索引
 
@@ -87,7 +89,10 @@ DROP INDEX index_name ON table
 
 1.普通索引
 
-​	是最基本的索引，它没有任何限制。它有以下几种创建方式：
+```
+是最基本的索引，它没有任何限制。它有以下几种创建方式：
+```
+
 （1）直接创建索引
 
 ```sql
@@ -113,9 +118,11 @@ CREATE TABLE `table` (
 
 2.唯一索引
 
-​	与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组	合必须唯一。它有以下几种创建方式：
+```
+与前面的普通索引类似，不同的就是：索引列的值必须唯一，但允许有空值。如果是组合索引，则列值的组	合必须唯一。它有以下几种创建方式：
 
-​	（1）创建唯一索引
+（1）创建唯一索引
+```
 
 ```sql
 CREATE UNIQUE INDEX indexName ON table(column(length))
@@ -129,7 +136,9 @@ ALTER TABLE table_name ADD UNIQUE indexName ON (column(length))
 
 3.主键索引
 
-​	是一种特殊的唯一索引，一个表只能有一个主键，不允许有空值。一般是在建表的时候同时创建主键索引：
+```
+是一种特殊的唯一索引，一个表只能有一个主键，不允许有空值。一般是在建表的时候同时创建主键索引：
+```
 
 ```sql
 CREATE TABLE `table` (
@@ -140,9 +149,11 @@ CREATE TABLE `table` (
 
 4.联合索引 [可参考](https://blog.csdn.net/wdjxxl/article/details/79790421)
 
-​	最左前缀原理（左边的出现有效，后面的才会有效） 如：我们在（a,b,c）字段上建了一个联合索引，所以这个索引是先按a 再按b 再按c进行排列的
+```
+最左前缀原理（左边的出现有效，后面的才会有效） 如：我们在（a,b,c）字段上建了一个联合索引，所以这个索引是先按a 再按b 再按c进行排列的
 
-​	下面是可以用索引的where，where可乱序:
+下面是可以用索引的where，where可乱序:
+```
 
 ```sql
 select * from table where a=1；
@@ -175,10 +186,10 @@ B-Tree树的特性：
 > 2） 除根结点与叶子结点，其他结点的孩子数为[ceil(m/2),m]个。ceil函数表示上取整数
 > 3） 所有叶子结点都出现在同一层，叶子结点不存储数据。
 > 4） 各个结点包含n个关键字信息：(P0,K1,P1,K2,P2......Kn,Pn)
->  其中：
->    4.1) Ki(i=1,2......n)为关键字，且K(i-1)<Ki，即从小到大排序
->    4.2) 关键字的个数n必须满足：[ceil(m/2)-1,m-1]
->    4.3) Pi指向子树，且指针P(i-1)所指向的子树结点中所有关键字均小于Ki。即：父结点中任何关键字的左孩子都小于它，右孩子大于它。
+> 其中：
+> 4.1) Ki(i=1,2......n)为关键字，且K(i-1)<Ki，即从小到大排序
+> 4.2) 关键字的个数n必须满足：[ceil(m/2)-1,m-1]
+> 4.3) Pi指向子树，且指针P(i-1)所指向的子树结点中所有关键字均小于Ki。即：父结点中任何关键字的左孩子都小于它，右孩子大于它。
 
 B+tree和B-Tree的差异：
 
@@ -194,11 +205,13 @@ B+tree和B-Tree的差异：
 
  使用慢查询日志，找出执行慢的查询
 
-​	show valiables like 'general%'
+```
+show valiables like 'general%'
 
-​	其中general_log:日志记录功能是否开启，默认是OFF，我们需要设置为ON ；set GLOBAL general_log='ON'
+其中general_log:日志记录功能是否开启，默认是OFF，我们需要设置为ON ；set GLOBAL general_log='ON'
 
-​	然后再次查询是否开启
+然后再次查询是否开启
+```
 
 使用explain select来决定查询功能是否合适
 
@@ -334,9 +347,16 @@ innodb是支持事务的存储引擎；锁的级别是：行锁。支持外键�
 
    如上所述，可序列化解决了脏读、不可重复读、幻读等读现象，但是隔离级别越来越高的同时，在并发性上也就越来越低。
 
-四种事务隔离解决的问题：
+四种事务隔离级别和能解决的问题
 
-![1552285320244](https://github.com/ousp2008/ospNote/blob/ec4a8f0c51e7987d1a08da45702c656e47c2fdee/mysql/asserts/1552285320244.png)
+| 事务隔离级别                 | 脏读 | 不可重复读 | 幻读 |
+| ---------------------------- | ---- | ---------- | ---- |
+| 未提交读（read_uncommitted） | 否   | 否         | 否   |
+| 提交读(read_committed)       | 是   | 否         | 否   |
+| 可重复读(repeatable_read)    | 是   | 是         | 否   |
+| 串行化（serializable）       | 是   | 是         | 是   |
+
+
 
 ## MVCC 可参照 文章[ 参考](https://mp.weixin.qq.com/s?src=11&timestamp=1552286772&ver=1477&signature=5EuWx9yzvSi18dR8-eyWnlqTtYqYPQ84S1Ad3n9AiHQixYPy2Ior2-bbqBdCsZNFnb4tWwfUs2uV63MRqD6EFmQODk4*e4xVoWPGZfhRTjahiMbrcJY0g52mIe9M0ldK&new=1)
 
